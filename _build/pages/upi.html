@@ -1,0 +1,103 @@
+<header class="page-head">
+<h1>UPI QR code standee maker</h1>
+<p>Type your UPI ID and shop name. You get a correct UPI payment QR on a print-ready A5 or A6 standee, with the text in English, Hindi or Telugu.</p>
+<p class="privacy-note"><strong>Private:</strong> made on your phone. Nothing is uploaded.</p>
+</header>
+
+<div class="tool">
+<form id="upi-form" class="panel" novalidate autocomplete="on">
+<h2>Your details</h2>
+<div class="field">
+<label for="shop">Shop name (big text on top)</label>
+<input id="shop" name="shop" type="text" maxlength="60" placeholder="Sri Lakshmi General Stores" autocomplete="organization">
+</div>
+<div class="field">
+<label for="pa">UPI ID</label>
+<input id="pa" name="pa" type="text" inputmode="email" autocapitalize="off" spellcheck="false" placeholder="ravistores@okaxis" aria-describedby="pa-hint">
+<p class="hint" id="pa-hint">Find it in your UPI app under your profile or "receive money". It looks like name@bank.</p>
+<p class="error" role="alert"></p>
+</div>
+<div class="field">
+<label for="pn">Payee name</label>
+<input id="pn" name="pn" type="text" maxlength="60" placeholder="Ravi Kumar" autocomplete="name">
+<p class="hint">Use the name your bank shows for this UPI ID, so customers see a name they expect.</p>
+<p class="error" role="alert"></p>
+</div>
+<div class="field">
+<label for="am">Fixed amount in &#8377; (optional)</label>
+<input id="am" name="am" type="text" inputmode="decimal" placeholder="Leave empty so customers type the amount">
+<p class="hint">Only fill this for a fixed price, like a parking fee or a set meal.</p>
+<p class="error" role="alert"></p>
+</div>
+<fieldset class="chips field">
+<legend>Poster language</legend>
+<label class="chip"><input type="radio" name="lang" value="en+hi" checked><span>English + Hindi</span></label>
+<label class="chip"><input type="radio" name="lang" value="en+te"><span>English + Telugu</span></label>
+<label class="chip"><input type="radio" name="lang" value="en"><span>English</span></label>
+<label class="chip"><input type="radio" name="lang" value="hi"><span>हिन्दी</span></label>
+<label class="chip"><input type="radio" name="lang" value="te"><span>తెలుగు</span></label>
+</fieldset>
+<fieldset class="chips field">
+<legend>Colour</legend>
+<label class="chip"><input type="radio" name="theme" value="leaf" checked><span><i class="swatch" style="background:#0f5132"></i>Green</span></label>
+<label class="chip"><input type="radio" name="theme" value="saffron"><span><i class="swatch" style="background:#d9620b"></i>Saffron</span></label>
+<label class="chip"><input type="radio" name="theme" value="indigo"><span><i class="swatch" style="background:#23306a"></i>Indigo</span></label>
+<label class="chip"><input type="radio" name="theme" value="yellow"><span><i class="swatch" style="background:#ffd23f"></i>Yellow</span></label>
+<label class="chip"><input type="radio" name="theme" value="maroon"><span><i class="swatch" style="background:#76202b"></i>Maroon</span></label>
+<label class="chip"><input type="radio" name="theme" value="white"><span><i class="swatch" style="background:#fbfbf9"></i>White (saves ink)</span></label>
+</fieldset>
+<fieldset class="chips field">
+<legend>Paper size</legend>
+<label class="chip"><input type="radio" name="size" value="A5" checked><span>A5 (half of A4)</span></label>
+<label class="chip"><input type="radio" name="size" value="A6"><span>A6 (quarter of A4)</span></label>
+</fieldset>
+<label class="check"><input type="checkbox" name="note" checked> Add "please show the payment screen at the counter"</label>
+<label class="check"><input type="checkbox" name="credit" checked> Small DukaanKit credit at the bottom</label>
+</form>
+
+<div class="preview-col">
+<div class="panel">
+<h2>Preview</h2>
+<p class="notice" id="demo-hint">Showing a sample. Enter your UPI ID to make your own poster.</p>
+<div class="preview-frame" id="preview" aria-live="polite" aria-busy="true"></div>
+<div class="actions">
+<button class="btn" type="button" data-action="pdf">Download PDF</button>
+<button class="btn btn-quiet" type="button" data-action="png">Download PNG</button>
+<button class="btn btn-quiet" type="button" data-action="print">Print</button>
+<button class="btn btn-quiet" type="button" data-action="qr">QR only (PNG)</button>
+</div>
+<p class="status" id="status" role="status"></p>
+<div class="link-out">
+<span class="small muted">Payment link inside the QR:</span>
+<code id="uri-out"></code>
+<div class="actions">
+<button class="btn btn-ghost btn-sm" type="button" data-action="copy">Copy link</button>
+<a class="btn btn-ghost btn-sm" id="test-link" href="#" hidden>Test on this phone</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<section class="section prose" aria-labelledby="how">
+<h2 id="how">How to make and use your UPI standee</h2>
+<ol class="steps">
+<li>Copy your UPI ID from your UPI app (Google Pay, PhonePe, Paytm, BHIM or your bank's app) and paste it above.</li>
+<li>Type the payee name exactly as your bank shows it, and your shop name for the top of the poster.</li>
+<li>Before printing, scan the preview with another phone and pay yourself &#8377;1. Check that the right name and bank account show up.</li>
+<li>Download the PDF and print it at any print shop. A5 fits a counter acrylic stand. Lamination keeps it scannable for longer.</li>
+</ol>
+<p>Print tip: keep the QR at least 4 cm wide, print on matte paper so it does not reflect tube light, and do not let the printer "fit to page" stretch it unevenly.</p>
+</section>
+
+<section class="section" aria-labelledby="faq">
+<h2 id="faq">Questions</h2>
+<div class="faq">
+<details><summary>Is this UPI QR code safe? Can someone change it?</summary><div><p>The QR only contains your UPI ID, name and optional amount, in the standard upi://pay format that every UPI app reads. Money always goes to the UPI ID inside it. The real risk is someone sticking their own QR over yours, so check your standee every day and keep it behind the counter where you can see it.</p></div></details>
+<details><summary>Does it work with Google Pay, PhonePe and Paytm?</summary><div><p>Yes. The code follows the UPI deep link format published by NPCI, so any UPI app can scan it, including BHIM and bank apps.</p></div></details>
+<details><summary>Is there any fee or limit?</summary><div><p>DukaanKit is free and never touches your money. Your bank and UPI app decide any transaction limits. If you receive many payments a day, ask your bank about a merchant (business) UPI ID.</p></div></details>
+<details><summary>Should I add a fixed amount?</summary><div><p>Only when the price never changes, such as a parking fee or a fixed thali. Otherwise leave it empty so customers type the bill amount themselves.</p></div></details>
+<details><summary>Why does my bank's own QR look different?</summary><div><p>Bank and app QRs often add extra merchant fields. This tool makes a plain UPI QR with your UPI ID, which every UPI app accepts. If your bank gave you a merchant QR, you can keep using that one too.</p></div></details>
+<details><summary>Is my UPI ID sent anywhere?</summary><div><p>No. The QR and the poster are drawn inside your browser. There is no server, no account and no tracking. The page also works without internet after the first visit.</p></div></details>
+</div>
+</section>

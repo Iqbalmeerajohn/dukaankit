@@ -1,0 +1,100 @@
+<style>@media print { @page { size: A4 portrait; margin: 12mm; } }</style>
+<header class="page-head">
+<h1>GST invoice and bill maker</h1>
+<p>Make a proper GST tax invoice or a simple bill on your phone. CGST + SGST or IGST is picked from the place of supply, totals are written in words, and you can add a UPI QR so customers pay the exact amount.</p>
+<p class="privacy-note"><strong>Private:</strong> invoices are saved only on this device.</p>
+</header>
+
+<form id="inv-form" novalidate autocomplete="on">
+<div class="tool">
+<div>
+<section class="panel" aria-labelledby="h-seller">
+<h2 id="h-seller">Your shop (saved for next time)</h2>
+<div class="field"><label for="s_name">Shop / business name</label><input id="s_name" name="s_name" type="text" maxlength="80" autocomplete="organization" placeholder="Sri Venkateswara Traders"></div>
+<div class="field"><label for="s_addr">Address</label><textarea id="s_addr" name="s_addr" rows="2" maxlength="250" placeholder="12-3-45, Main Road, Gajuwaka, Visakhapatnam 530026"></textarea></div>
+<label class="check"><input type="checkbox" name="gst_on" checked> I am registered under GST (make a Tax Invoice)</label>
+<p class="hint small" style="margin:0 0 14px">Untick for a Bill of Supply with no GST. Composition dealers: write "Composition taxable person, not eligible to collect tax on supplies" in Notes.</p>
+<div class="row row-2">
+<div class="field gst-only"><label for="s_gstin">Your GSTIN</label><input id="s_gstin" name="s_gstin" type="text" maxlength="15" autocapitalize="characters" spellcheck="false" placeholder="37ABCDE1234F1Z5"><p class="error" role="alert"></p></div>
+<div class="field"><label for="s_state">Your state</label><select id="s_state" name="s_state" class="state"></select></div>
+</div>
+<div class="row row-2">
+<div class="field"><label for="s_phone">Phone (optional)</label><input id="s_phone" name="s_phone" type="tel" maxlength="20" autocomplete="tel"></div>
+<div class="field"><label for="s_upi">UPI ID for a pay QR (optional)</label><input id="s_upi" name="s_upi" type="text" autocapitalize="off" spellcheck="false" placeholder="shop@okaxis"><p class="error" role="alert"></p></div>
+</div>
+</section>
+
+<section class="panel" aria-labelledby="h-inv">
+<h2 id="h-inv">Invoice and customer</h2>
+<div class="row row-2">
+<div class="field"><label for="inv_no">Invoice number</label><input id="inv_no" name="inv_no" type="text" maxlength="16" placeholder="INV-001"></div>
+<div class="field"><label for="inv_date">Date</label><input id="inv_date" name="inv_date" type="date"></div>
+</div>
+<div class="field"><label for="b_name">Customer name</label><input id="b_name" name="b_name" type="text" maxlength="80" placeholder="Leave empty for a cash customer"></div>
+<div class="field"><label for="b_addr">Customer address (optional)</label><textarea id="b_addr" name="b_addr" rows="2" maxlength="250"></textarea></div>
+<div class="row row-2 gst-only">
+<div class="field"><label for="b_gstin">Customer GSTIN (B2B, optional)</label><input id="b_gstin" name="b_gstin" type="text" maxlength="15" autocapitalize="characters" spellcheck="false"><p class="error" role="alert"></p></div>
+<div class="field"><label for="pos">Place of supply</label><select id="pos" name="pos" class="state"></select><p class="hint">Same as your state: CGST + SGST. Other state: IGST.</p></div>
+</div>
+<label class="check gst-only"><input type="checkbox" name="inclusive"> My rates already include GST</label>
+<label class="check"><input type="checkbox" name="round" checked> Round the total to the nearest rupee</label>
+</section>
+
+<section class="panel" aria-labelledby="h-items">
+<h2 id="h-items">Items</h2>
+<div class="items" id="items"></div>
+<p class="field error" id="item-errors" role="alert"></p>
+<button type="button" class="btn btn-quiet" id="add-item">Add item</button>
+<p class="hint small" style="margin-top:12px">GST rates change. Check the current rate and HSN code for your item on the CBIC GST portal or with your accountant.</p>
+<div class="field" style="margin-top:16px"><label for="notes">Notes / terms (optional)</label><textarea id="notes" name="notes" rows="2" maxlength="400" placeholder="Goods once sold will not be taken back."></textarea></div>
+</section>
+</div>
+
+<div class="preview-col">
+<section class="panel" aria-labelledby="h-total">
+<h2 id="h-total">Total</h2>
+<div class="totals-mini" id="mini" aria-live="polite"></div>
+<div class="actions">
+<button type="button" class="btn span-2" id="print-inv">Print or save as PDF</button>
+<button type="button" class="btn btn-quiet" id="save-inv">Save invoice</button>
+<button type="button" class="btn btn-quiet" id="new-inv">New invoice</button>
+</div>
+<p class="status" id="inv-status" role="status"></p>
+<p class="hint small">To get a PDF, tap Print and choose "Save as PDF" as the printer.</p>
+</section>
+<section class="panel" aria-labelledby="h-saved">
+<h2 id="h-saved">Saved on this device</h2>
+<ul class="saved-list" id="saved"></ul>
+</section>
+</div>
+</div>
+</form>
+
+<section class="section invoice-print" aria-labelledby="h-sheet">
+<h2 id="h-sheet" class="no-print">Invoice preview</h2>
+<div class="sheet-scroll"><div class="sheet" id="sheet"></div></div>
+</section>
+
+<section class="section prose" aria-labelledby="how">
+<h2 id="how">How to make a GST invoice here</h2>
+<ol class="steps">
+<li>Fill in your shop details and GSTIN once. They are remembered on this device, and your state is read from the first two digits of your GSTIN.</li>
+<li>Enter the customer. For a business customer, add their GSTIN and the place of supply is set from it.</li>
+<li>Add items with quantity, rate and GST rate. Tick "rates already include GST" if your prices are MRP-style inclusive prices.</li>
+<li>Tap <strong>Print or save as PDF</strong>. Choose your printer, or "Save as PDF" to send the bill on WhatsApp. Tap <strong>Save invoice</strong> to keep a copy on this device.</li>
+</ol>
+<h3>How the tax is calculated</h3>
+<p>Amounts are calculated in paise, so there are no rounding surprises. Tax is worked out for each GST rate on the total taxable value at that rate. Within the same state, the rate is split equally into CGST and SGST (UTGST in Union Territories without a legislature, such as Chandigarh or Ladakh). For another state, the full rate is charged as IGST. Paise are rounded to the nearest paisa, and the optional round-off to the nearest rupee is shown as its own line.</p>
+</section>
+
+<section class="section" aria-labelledby="faq">
+<h2 id="faq">Questions</h2>
+<div class="faq">
+<details><summary>When do I charge CGST + SGST and when IGST?</summary><div><p>If the place of supply is in the same state as your shop, charge CGST and SGST (each half of the GST rate). If the place of supply is a different state, charge IGST at the full rate. For walk-in customers buying at your counter, the place of supply is normally your own state.</p></div></details>
+<details><summary>Is this invoice valid for GST?</summary><div><p>It includes the usual fields for a tax invoice: your name, address and GSTIN, invoice number and date, customer details, HSN/SAC, taxable value, rate and amount of tax, place of supply and total in words. You are responsible for the rates, HSN codes and numbering. Businesses above the e-invoicing turnover limit must also generate an IRN on the government portal, which this tool does not do.</p></div></details>
+<details><summary>What GST rate should I use?</summary><div><p>It depends on the item. GST rates were revised in 2025, and the old 12% and 28% slabs no longer apply to most goods, so they are kept here only for older items and corrections. Check the current rate and HSN code on the CBIC GST website or ask your accountant.</p></div></details>
+<details><summary>I am not registered under GST. Can I use it?</summary><div><p>Yes. Untick "I am registered under GST" and DukaanKit makes a Bill of Supply with no tax lines.</p></div></details>
+<details><summary>Where are my invoices stored?</summary><div><p>Only in this browser on this device (local storage). Nothing is sent to any server. Clearing browser data deletes them, so keep the PDFs you send to customers as your record.</p></div></details>
+<details><summary>Does it work offline?</summary><div><p>Yes. After the first visit, the page works without internet. You can also install it from your browser menu ("Add to Home screen").</p></div></details>
+</div>
+</section>

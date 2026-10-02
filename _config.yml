@@ -1,0 +1,9 @@
+# GitHub Pages (Jekyll) settings: publish the static files as-is, keep internal docs and tooling out of the site.
+exclude:
+  - GROWTH.md
+  - README.md
+  - tests
+  - qa
+  - _build
+include:
+  - 404.html

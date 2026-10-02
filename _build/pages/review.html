@@ -1,0 +1,47 @@
+<header class="page-head">
+<h1>Google review QR code poster</h1>
+<p>Paste your Google review link and print a "Loved us? Review us on Google" poster. Customers scan it and land straight on the review box for your shop.</p>
+<p class="privacy-note"><strong>Private:</strong> made on your phone. Nothing is uploaded.</p>
+</header>
+
+<div class="tool">
+<form id="review-form" class="panel" novalidate>
+<h2>Your details</h2>
+<div class="field">
+<label for="link">Google review link (or Place ID)</label>
+<input id="link" name="link" type="url" inputmode="url" autocapitalize="off" spellcheck="false" placeholder="https://g.page/r/.../review">
+<p class="hint">Not sure where to find it? See the steps below the tool.</p>
+<p class="error" role="alert"></p>
+<p class="warn" id="link-warn" role="status"></p>
+</div>
+<div class="field">
+<label for="shop">Shop name (optional, shown under the QR)</label>
+<input id="shop" name="shop" type="text" maxlength="60" placeholder="Sai Ram Tiffins">
+</div>
+<!--@poster-options theme=indigo-->
+<label class="check"><input type="checkbox" name="credit" checked> Small DukaanKit credit at the bottom</label>
+</form>
+<!--@preview label=Review link inside the QR:|test=Open the review page-->
+</div>
+
+<section class="section prose" aria-labelledby="how">
+<h2 id="how">How to get your Google review link</h2>
+<ol class="steps">
+<li>Open Google Maps or Google Search on the phone that manages your shop's Google Business Profile and search for your shop name.</li>
+<li>In your business profile, tap <strong>Ask for reviews</strong> (it may be called <strong>Get more reviews</strong> or <strong>Share review form</strong>).</li>
+<li>Copy the link Google shows. It usually starts with <code>https://g.page/r/</code>. Paste it in the box above.</li>
+<li>Scan the preview with your phone to check it opens your review box, then download the PDF and print it.</li>
+</ol>
+<p>No Business Profile yet? You can create one for free at Google Business Profile, and Google will verify your shop before reviews appear. If you know your <strong>Place ID</strong> (it starts with <code>ChIJ</code>), you can paste that instead and DukaanKit builds the review link for you.</p>
+</section>
+
+<section class="section" aria-labelledby="faq">
+<h2 id="faq">Questions</h2>
+<div class="faq">
+<details><summary>Can I offer a discount in exchange for a review?</summary><div><p>No. Google's rules do not allow paying or giving discounts for reviews, and reviews can be removed if they look incentivised. Just ask happy customers politely. A poster near the billing counter works well.</p></div></details>
+<details><summary>Where should I put the poster?</summary><div><p>Where customers wait with their phone already in hand: the billing counter, the table, the waiting chair or the delivery packet. A6 cards work well on tables, A5 on the counter.</p></div></details>
+<details><summary>The QR opens Google Maps but not the review box. Why?</summary><div><p>Some links open your profile page instead of the review form. Use the link from the "Ask for reviews" button in your Business Profile, which opens the review box directly.</p></div></details>
+<details><summary>Does this work for any business, not just shops?</summary><div><p>Yes. Clinics, salons, restaurants, tuition centres and service businesses all use the same Google review link.</p></div></details>
+<details><summary>Is my link sent anywhere?</summary><div><p>No. The QR and poster are made inside your browser. There is no server and no tracking.</p></div></details>
+</div>
+</section>

@@ -1,0 +1,4 @@
+qa/shots/
+__pycache__/
+*.pyc
+qa/last-run.txt

@@ -1,0 +1,96 @@
+<header class="page-head">
+<h1>Open/Closed sign, shop timings and holiday notice maker</h1>
+<p>Print a clear Open and Closed door sign, a weekly timings board, or a festival holiday notice. In English, Hindi or Telugu, on A4, A5 or A6.</p>
+<p class="privacy-note"><strong>Private:</strong> made on your phone. Nothing is uploaded.</p>
+</header>
+
+<div class="tool">
+<form id="sign-form" class="panel" novalidate>
+<h2>What do you want to print?</h2>
+<fieldset class="chips field">
+<legend class="sr-only">Sign type</legend>
+<label class="chip"><input type="radio" name="mode" value="openclosed" checked><span>Open / Closed sign</span></label>
+<label class="chip"><input type="radio" name="mode" value="timings"><span>Shop timings</span></label>
+<label class="chip"><input type="radio" name="mode" value="holiday"><span>Holiday notice</span></label>
+</fieldset>
+<div class="field">
+<label for="shop">Shop name (optional)</label>
+<input id="shop" name="shop" type="text" maxlength="60" placeholder="Vijaya Medicals">
+</div>
+
+<div data-mode="openclosed">
+<div class="field">
+<label for="hours">Timings line (optional)</label>
+<input id="hours" name="hours" type="text" maxlength="60" placeholder="Timings: 9:00 AM - 9:00 PM">
+<p class="hint">You get two pages: OPEN and CLOSED. Print both and stick them back to back.</p>
+</div>
+</div>
+
+<div data-mode="timings" hidden>
+<div class="field">
+<span class="label">Opening hours</span>
+<div class="days" id="days"></div>
+<button type="button" class="btn btn-quiet btn-sm" id="copy-mon">Copy Monday's time to all days</button>
+</div>
+<label class="check"><input type="checkbox" name="lunch"> Show a lunch break</label>
+<div class="row row-2">
+<div class="field"><label for="lunch_from">Lunch from</label><input id="lunch_from" name="lunch_from" type="time" value="13:30"></div>
+<div class="field"><label for="lunch_to">Lunch to</label><input id="lunch_to" name="lunch_to" type="time" value="14:30"></div>
+</div>
+</div>
+
+<div data-mode="holiday" hidden>
+<div class="field">
+<label for="fest">Festival or reason</label>
+<select id="fest" name="fest"></select>
+</div>
+<div class="row row-3" id="custom-fest">
+<div class="field"><label for="f_en">Name in English</label><input id="f_en" name="f_en" type="text" maxlength="40" placeholder="Bonalu"></div>
+<div class="field"><label for="f_hi">In Hindi (optional)</label><input id="f_hi" name="f_hi" type="text" maxlength="40" lang="hi" placeholder="बोनालु"></div>
+<div class="field"><label for="f_te">In Telugu (optional)</label><input id="f_te" name="f_te" type="text" maxlength="40" lang="te" placeholder="బోనాలు"></div>
+</div>
+<div class="row row-2">
+<div class="field"><label for="d_from">Closed from</label><input id="d_from" name="d_from" type="date"></div>
+<div class="field"><label for="d_to">Closed until (optional)</label><input id="d_to" name="d_to" type="date"><p class="error" role="alert"></p></div>
+</div>
+<div class="field">
+<label for="d_reopen">Reopening date (optional)</label>
+<input id="d_reopen" name="d_reopen" type="date">
+<p class="hint" id="reopen-hint"></p>
+</div>
+<label class="check"><input type="checkbox" name="sorry" checked> "Sorry for the inconvenience"</label>
+<label class="check"><input type="checkbox" name="wishes" checked> Festival wishes at the bottom</label>
+</div>
+
+<!--@poster-options theme=leaf|sizes=A4,A5,A6|size=A4-->
+<fieldset class="chips field">
+<legend>Orientation</legend>
+<label class="chip"><input type="radio" name="orient" value="landscape" checked><span>Landscape (wide)</span></label>
+<label class="chip"><input type="radio" name="orient" value="portrait"><span>Portrait (tall)</span></label>
+</fieldset>
+<label class="check"><input type="checkbox" name="credit" checked> Small DukaanKit credit at the bottom</label>
+</form>
+<!--@preview label=|qr=0|demo=Edit the details on the left. The preview updates as you type.-->
+</div>
+
+<section class="section prose" aria-labelledby="how">
+<h2 id="how">How to print your shop sign</h2>
+<ol class="steps">
+<li>Pick the sign type, type your shop name, and choose the language your customers read.</li>
+<li>For a door sign, choose A4 landscape. For a counter or window, A5 is enough.</li>
+<li>Download the PDF and print it. For Open/Closed, print both pages and paste them back to back, or laminate them and hang on a string.</li>
+<li>For holidays, print the notice a few days early and stick it on the shutter so regular customers know in advance.</li>
+</ol>
+<p>Ink saving tip: the White colour option uses very little ink and still looks clean on a door.</p>
+</section>
+
+<section class="section" aria-labelledby="faq">
+<h2 id="faq">Questions</h2>
+<div class="faq">
+<details><summary>Can I make a sign only in Telugu or only in Hindi?</summary><div><p>Yes. Choose తెలుగు or हिन्दी under Poster language. You can also mix English with either language.</p></div></details>
+<details><summary>My festival is not in the list. What do I do?</summary><div><p>Choose "Other" and type the name in English, and optionally in Hindi and Telugu. If you leave those empty, the English name is used.</p></div></details>
+<details><summary>Can I show different timings on Sunday?</summary><div><p>Yes. In Shop timings, every day has its own opening and closing time, and you can untick a day to show it as closed.</p></div></details>
+<details><summary>Will the Hindi and Telugu text print correctly?</summary><div><p>Yes. The poster is made as an image inside your browser, so the letters print exactly as you see them in the preview, even on printers without Indian language fonts.</p></div></details>
+<details><summary>Do I need to sign up?</summary><div><p>No. There is no account and nothing is uploaded. It also works without internet once the page has loaded.</p></div></details>
+</div>
+</section>

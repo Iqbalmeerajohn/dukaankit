@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iqbalmeerajohn.github.io/dukaankit/sitemap.xml

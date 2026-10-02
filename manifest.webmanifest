@@ -1,0 +1,20 @@
+{
+  "name": "DukaanKit: free shop tools",
+  "short_name": "DukaanKit",
+  "description": "Print-ready UPI QR standees, Google review and WhatsApp posters, shop signs and GST invoices. Works offline.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f6f3",
+  "theme_color": "#0f6b4f",
+  "lang": "en-IN",
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "UPI QR standee", "url": "upi-qr-standee/" },
+    { "name": "GST invoice", "url": "gst-invoice/" }
+  ]
+}

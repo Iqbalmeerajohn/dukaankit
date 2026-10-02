@@ -1,0 +1,75 @@
+<header class="page-head">
+<h1>WhatsApp QR code and click-to-chat link</h1>
+<p>Make a wa.me link that opens a chat with your shop, with a ready message typed in. Get the QR code and a printable poster for the counter or the shutter.</p>
+<p class="privacy-note"><strong>Private:</strong> made on your phone. Nothing is uploaded.</p>
+</header>
+
+<div class="tool">
+<form id="wa-form" class="panel" novalidate>
+<h2>Your details</h2>
+<div class="row" style="grid-template-columns: 7.5rem minmax(0,1fr)">
+<div class="field">
+<label for="cc">Code</label>
+<select id="cc" name="cc">
+<option value="91" selected>+91 India</option>
+<option value="971">+971 UAE</option>
+<option value="966">+966 Saudi</option>
+<option value="974">+974 Qatar</option>
+<option value="968">+968 Oman</option>
+<option value="965">+965 Kuwait</option>
+<option value="973">+973 Bahrain</option>
+<option value="977">+977 Nepal</option>
+<option value="880">+880 Bangladesh</option>
+<option value="94">+94 Sri Lanka</option>
+<option value="65">+65 Singapore</option>
+<option value="60">+60 Malaysia</option>
+<option value="44">+44 UK</option>
+<option value="1">+1 USA / Canada</option>
+<option value="61">+61 Australia</option>
+</select>
+</div>
+<div class="field">
+<label for="phone">WhatsApp number</label>
+<input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="98765 43210">
+<p class="error" role="alert"></p>
+</div>
+</div>
+<div class="field">
+<label for="msg">Message that appears ready to send (optional)</label>
+<textarea id="msg" name="msg" maxlength="500" placeholder="Hi, I saw your poster. I want to place an order."></textarea>
+<p class="hint">Customers can edit it before sending.</p>
+</div>
+<div class="field">
+<label for="shop">Shop name (optional)</label>
+<input id="shop" name="shop" type="text" maxlength="60" placeholder="Fresh Mart Vegetables">
+</div>
+<div class="field">
+<label for="note">Extra line on the poster (optional)</label>
+<input id="note" name="note" type="text" maxlength="70" placeholder="Home delivery available">
+</div>
+<!--@poster-options theme=leaf-->
+<label class="check"><input type="checkbox" name="credit" checked> Small DukaanKit credit at the bottom</label>
+</form>
+<!--@preview label=Your WhatsApp chat link:|test=Test the link-->
+</div>
+
+<section class="section prose" aria-labelledby="how">
+<h2 id="how">How to use your WhatsApp link</h2>
+<ol class="steps">
+<li>Enter the number that has WhatsApp or WhatsApp Business, without the 0 at the start.</li>
+<li>Write a short starting message, for example "I want to order" or "Please send today's price list".</li>
+<li>Tap <strong>Test the link</strong> on your phone to check it opens the right chat.</li>
+<li>Copy the link for your Instagram bio, Google Business Profile and visiting cards. Print the poster for the shop.</li>
+</ol>
+</section>
+
+<section class="section" aria-labelledby="faq">
+<h2 id="faq">Questions</h2>
+<div class="faq">
+<details><summary>What is a wa.me link?</summary><div><p>It is WhatsApp's official click-to-chat link. Anyone who opens it gets a chat with your number, even if they have not saved your contact.</p></div></details>
+<details><summary>Do I need WhatsApp Business?</summary><div><p>No, it works with normal WhatsApp too. WhatsApp Business adds a catalogue, quick replies and away messages, which help when many customers message you.</p></div></details>
+<details><summary>Can I write the message in Hindi or Telugu?</summary><div><p>Yes. Type the message in any language. It is encoded safely in the link and shows up correctly in WhatsApp.</p></div></details>
+<details><summary>Will my number be visible to everyone?</summary><div><p>Yes, anyone who scans or opens the link sees your number, the same as a number painted on a board. Use a shop number if you want to keep your personal number private.</p></div></details>
+<details><summary>Is my number stored anywhere?</summary><div><p>Only in your own browser, so the form is filled next time. DukaanKit has no server and sends nothing.</p></div></details>
+</div>
+</section>
