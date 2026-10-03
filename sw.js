@@ -1,5 +1,5 @@
 /* DukaanKit service worker: precache everything for offline use. Bump VERSION when files change. */
-var VERSION = "dukaankit-v1";
+var VERSION = "dukaankit-v2";
 var FILES = [
   "./", "upi-qr-standee/", "google-review-qr/", "whatsapp-qr/", "gst-invoice/", "shop-sign/", "recommended-gear/", "404.html",
   "manifest.webmanifest", "favicon.svg",

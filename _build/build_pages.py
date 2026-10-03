@@ -200,6 +200,7 @@ def layout(slug, partial, title, desc, scripts, bodyclass):
 </div></footer>
 <script src="{root}assets/js/config.js"></script>
 <script src="{root}assets/js/site.js"></script>{js}
+<script data-goatcounter="https://snoopy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 '''
