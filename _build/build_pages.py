@@ -32,6 +32,9 @@ PAGES = [
     ("shop-sign/", "sign", "Open/Closed Sign, Shop Timings and Holiday Notice Maker (Free) | DukaanKit",
      "Print an Open/Closed door sign, a shop timings board or a festival holiday notice in English, Hindi or Telugu. Free A4, A5 and A6 PDFs.",
      "Signs", ["poster.js", "tool.js", "sign.js"], "tool-page"),
+    ("festival-offer-poster/", "offer", "Diwali Offer Poster Maker for Shops (Free, Print or WhatsApp) | DukaanKit",
+     "Make a festival offer poster for your shop: Diwali, Sankranti, Eid or Christmas sale, with your offer and dates in English, Hindi or Telugu. Free A4/A5 PDF and PNG for WhatsApp.",
+     "Offers", ["poster.js", "tool.js", "offer.js"], "tool-page"),
     ("recommended-gear/", "gear", "UPI Soundbox, Thermal Printer and Barcode Scanner Buying Guide | DukaanKit",
      "What to look for when buying a UPI soundbox, thermal receipt printer, label printer or barcode scanner for a small shop in India. Honest, no paid rankings.",
      "Gear", [], "gear-page"),
@@ -191,6 +194,7 @@ def layout(slug, partial, title, desc, scripts, bodyclass):
 <li><a href="{root}whatsapp-qr/">WhatsApp QR and link</a></li>
 <li><a href="{root}gst-invoice/">GST invoice maker</a></li>
 <li><a href="{root}shop-sign/">Open/Closed and holiday signs</a></li>
+<li><a href="{root}festival-offer-poster/">Festival offer poster</a></li>
 </ul></div>
 <div><h2>More</h2><ul>
 <li><a href="{root}recommended-gear/">Recommended shop gear</a></li>

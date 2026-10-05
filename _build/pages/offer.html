@@ -1,0 +1,76 @@
+<header class="page-head">
+<h1>Festival offer poster maker for shops</h1>
+<p>Make a Diwali, Sankranti, Eid or Christmas offer poster in a minute: your shop name, your offer, the dates. In English, Hindi or Telugu. Print it for the window, or download the PNG and share it on WhatsApp.</p>
+<p class="privacy-note"><strong>Private:</strong> made on your phone. Nothing is uploaded.</p>
+</header>
+
+<div class="tool">
+<form id="offer-form" class="panel" novalidate>
+<h2>Your offer</h2>
+<div class="field">
+<label for="fest">Festival</label>
+<select id="fest" name="fest"></select>
+</div>
+<div class="row row-3" id="custom-fest" hidden>
+<div class="field"><label for="f_en">Name in English</label><input id="f_en" name="f_en" type="text" maxlength="40" placeholder="Onam"></div>
+<div class="field"><label for="f_hi">In Hindi (optional)</label><input id="f_hi" name="f_hi" type="text" maxlength="40" lang="hi" placeholder="ओणम"></div>
+<div class="field"><label for="f_te">In Telugu (optional)</label><input id="f_te" name="f_te" type="text" maxlength="40" lang="te" placeholder="ఓణం"></div>
+</div>
+<div class="field">
+<label for="shop">Shop name</label>
+<input id="shop" name="shop" type="text" maxlength="60" placeholder="Sri Lakshmi Textiles">
+</div>
+<div class="field">
+<label for="headline">Main offer</label>
+<input id="headline" name="headline" type="text" maxlength="70" placeholder="Flat 20% off on all sarees">
+<p class="hint">Short and exact works best: "Buy 2 get 1 free", "Up to 30% off", "Free gift on every bill". You can type in any language.</p>
+</div>
+<div class="field">
+<label for="details">Conditions (optional)</label>
+<input id="details" name="details" type="text" maxlength="110" placeholder="On bills above ₹1,000. Not valid with other offers.">
+</div>
+<div class="row row-2">
+<div class="field"><label for="d_from">Offer starts (optional)</label><input id="d_from" name="d_from" type="date"></div>
+<div class="field"><label for="d_to">Offer ends (optional)</label><input id="d_to" name="d_to" type="date"><p class="error" role="alert"></p></div>
+</div>
+<div class="field">
+<label for="contact">Address or phone line (optional)</label>
+<input id="contact" name="contact" type="text" maxlength="80" placeholder="Main Road, Gajuwaka">
+</div>
+<label class="check"><input type="checkbox" name="wishes" checked> Festival wishes at the bottom</label>
+<label class="check"><input type="checkbox" name="decor" checked> Lamps or stars along the edges</label>
+
+<!--@poster-options theme=maroon|sizes=A4,A5,A6|size=A4-->
+<fieldset class="chips field">
+<legend>Orientation</legend>
+<label class="chip"><input type="radio" name="orient" value="portrait" checked><span>Portrait (tall)</span></label>
+<label class="chip"><input type="radio" name="orient" value="landscape"><span>Landscape (wide)</span></label>
+</fieldset>
+<label class="check"><input type="checkbox" name="credit" checked> Small DukaanKit credit at the bottom</label>
+</form>
+<!--@preview label=|qr=0|demo=Showing a sample. Type your offer to make your own poster.-->
+</div>
+
+<section class="section prose" aria-labelledby="how">
+<h2 id="how">How to make a festival offer poster</h2>
+<ol class="steps">
+<li>Pick the festival. If yours is not listed, choose "Other" and type its name.</li>
+<li>Type your shop name and the offer in a few words. Put the conditions (minimum bill, which items) in the second line so nobody feels cheated at the counter.</li>
+<li>Add the offer dates. Customers trust an offer more when they can see when it ends.</li>
+<li>Download the PDF to print it (A4 for the window or shutter, A5 for the counter), or the PNG to send on WhatsApp and post on Instagram or Facebook.</li>
+</ol>
+<p>Tip: one clear offer beats five small ones. "Flat 20% off on sarees" is read from across the road; a list of prices is not.</p>
+<p>Closing for the festival too? Make a matching <a href="{root}shop-sign/">holiday notice</a>. Want customers to pay by UPI during the rush? Print a <a href="{root}upi-qr-standee/">UPI QR standee</a>.</p>
+</section>
+
+<section class="section" aria-labelledby="faq">
+<h2 id="faq">Questions</h2>
+<div class="faq">
+<details><summary>Is this festival poster maker really free?</summary><div><p>Yes. There is no sign-up, no watermark except a small credit line you can switch off, and no limit on how many posters you make.</p></div></details>
+<details><summary>Can I share the poster on WhatsApp?</summary><div><p>Yes. Tap "Download PNG" and share the image from your gallery to WhatsApp, Instagram or Facebook. The PDF is for printing.</p></div></details>
+<details><summary>Can I write the offer in Hindi or Telugu?</summary><div><p>Yes. The festival name, dates and wishes are written for you in the language you choose under Poster language. The offer and conditions are printed exactly as you type them, in any language.</p></div></details>
+<details><summary>Which festivals are included?</summary><div><p>Diwali, Sankranti, Ugadi, Holi, Eid, Bakrid, Ganesh Chaturthi, Dussehra, Christmas, New Year, Republic Day and Independence Day. Choose "Other" for any festival, or "No festival" for a general sale.</p></div></details>
+<details><summary>What should I write so the offer is honest?</summary><div><p>Write only an offer you will really give at the counter, and put the conditions on the poster. If the discount is only on some items or above a bill amount, say so. It saves arguments and brings customers back.</p></div></details>
+<details><summary>Do I need internet?</summary><div><p>Only to open the page the first time. After that it works offline, and nothing you type leaves your phone.</p></div></details>
+</div>
+</section>

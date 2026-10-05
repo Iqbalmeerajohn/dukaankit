@@ -45,7 +45,11 @@
     h_on:       { en: "on {a}", hi: "{a} को", te: "{a}న" },
     h_reopen:   { en: "We reopen on {d}", hi: "दुकान {d} को फिर से खुलेगी", te: "{d}న మళ్ళీ తెరుస్తాము" },
     h_sorry:    { en: "Sorry for the inconvenience", hi: "असुविधा के लिए खेद है", te: "అసౌకర్యానికి క్షమించండి" },
-    h_wishes:   { en: "Happy {f}!", hi: "{f} की हार्दिक शुभकामनाएँ", te: "{f} శుభాకాంక్షలు" }
+    h_wishes:   { en: "Happy {f}!", hi: "{f} की हार्दिक शुभकामनाएँ", te: "{f} శుభాకాంక్షలు" },
+    o_title:    { en: "{f} Offer", hi: "{f} ऑफ़र", te: "{f} ఆఫర్" },
+    o_range:    { en: "Offer valid {a} to {b}", hi: "ऑफ़र {a} से {b} तक", te: "ఆఫర్ {a} నుండి {b} వరకు" },
+    o_on:       { en: "Offer valid on {a}", hi: "ऑफ़र केवल {a} को", te: "ఆఫర్ {a}న మాత్రమే" },
+    o_till:     { en: "Offer valid till {a}", hi: "ऑफ़र {a} तक", te: "ఆఫర్ {a} వరకు" }
   };
   var DAYS = {
     en: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],

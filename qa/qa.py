@@ -9,7 +9,7 @@ import cv2, numpy as np
 from playwright.async_api import async_playwright
 
 BASE = (sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:5531/dukaankit/").rstrip("/") + "/"
-PAGES = ["", "upi-qr-standee/", "google-review-qr/", "whatsapp-qr/", "gst-invoice/", "shop-sign/", "recommended-gear/"]
+PAGES = ["", "upi-qr-standee/", "google-review-qr/", "whatsapp-qr/", "gst-invoice/", "shop-sign/", "festival-offer-poster/", "recommended-gear/"]
 SHOTS = Path(__file__).parent / "shots"; SHOTS.mkdir(exist_ok=True)
 fails = []
 
@@ -125,6 +125,21 @@ async def other_tools(b):
     data = Path(await (await dl.value).path()).read_bytes()
     check(data.startswith(b"%PDF") and b"/MediaBox [0 0 841.89 595.28]" in data, "Sign: A4 landscape PDF")
     await pg.screenshot(path=str(SHOTS / "sign-holiday.png"))
+
+    await pg.goto(BASE + "festival-offer-poster/", wait_until="networkidle")
+    check(await pg.evaluate("document.querySelectorAll('#preview canvas').length") == 1 and await pg.is_visible("#demo-hint"), "Offer: sample poster shows before typing")
+    await pg.select_option("#fest", "diwali"); await pg.fill("#shop", "Sri Venkateswara Sweets")
+    await pg.fill("#headline", "Buy 1 kg, get 250 g free"); await pg.fill("#d_from", "2026-11-05"); await pg.fill("#d_to", "2026-11-08")
+    await pg.wait_for_timeout(500)
+    check(not await pg.is_visible("#demo-hint"), "Offer: demo hint hides once the offer is typed")
+    await pg.fill("#d_to", "2026-11-01"); await pg.wait_for_timeout(400)
+    check(bool(await pg.inner_text("#d_to ~ .error")), "Offer: end date before start shows an error")
+    await pg.fill("#d_to", "2026-11-08"); await pg.wait_for_timeout(400)
+    async with pg.expect_download() as dl:
+        await pg.click("[data-action=pdf]")
+    data = Path(await (await dl.value).path()).read_bytes()
+    check(data.startswith(b"%PDF") and b"/MediaBox [0 0 595.28 841.89]" in data, "Offer: A4 portrait PDF")
+    await pg.screenshot(path=str(SHOTS / "offer-diwali.png"))
     check(not pg.errs and not pg.bad, f"Other tools: no console errors {pg.errs[:2]} {pg.bad[:2]}")
     await pg.close()
 

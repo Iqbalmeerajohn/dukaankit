@@ -1,14 +1,14 @@
 /* DukaanKit service worker: precache everything for offline use. Bump VERSION when files change. */
-var VERSION = "dukaankit-v2";
+var VERSION = "dukaankit-v3";
 var FILES = [
-  "./", "upi-qr-standee/", "google-review-qr/", "whatsapp-qr/", "gst-invoice/", "shop-sign/", "recommended-gear/", "404.html",
+  "./", "upi-qr-standee/", "google-review-qr/", "whatsapp-qr/", "gst-invoice/", "shop-sign/", "festival-offer-poster/", "recommended-gear/", "404.html",
   "manifest.webmanifest", "favicon.svg",
   "assets/css/site.css",
   "assets/js/config.js", "assets/js/site.js", "assets/js/links.js", "assets/js/invoice-core.js", "assets/js/poster.js",
-  "assets/js/tool.js", "assets/js/upi.js", "assets/js/review.js", "assets/js/whatsapp.js", "assets/js/invoice.js", "assets/js/sign.js",
+  "assets/js/tool.js", "assets/js/upi.js", "assets/js/review.js", "assets/js/whatsapp.js", "assets/js/invoice.js", "assets/js/sign.js", "assets/js/offer.js",
   "assets/js/vendor/qrcodegen.js",
   "assets/img/icon-192.png", "assets/img/icon-512.png", "assets/img/apple-touch-icon.png",
-  "assets/img/sample-upi.jpg", "assets/img/sample-review.jpg", "assets/img/sample-whatsapp.jpg", "assets/img/sample-invoice.jpg", "assets/img/sample-sign.jpg"
+  "assets/img/sample-upi.jpg", "assets/img/sample-review.jpg", "assets/img/sample-whatsapp.jpg", "assets/img/sample-invoice.jpg", "assets/img/sample-sign.jpg", "assets/img/sample-offer.jpg"
 ];
 self.addEventListener("install", function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(FILES); }).then(function () { return self.skipWaiting(); }));
